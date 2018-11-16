@@ -1,0 +1,1276 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none; }
+
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/*colors*/
+/*end colors*/
+/*fonts*/
+@font-face {
+  font-family: "Skoda_pro_bold";
+  src: url("../fonts/skoda_pro_bold-webfont.woff"); }
+@font-face {
+  font-family: "Skoda_regular";
+  src: url("../fonts/skoda_pro-webfont.woff"); }
+@font-face {
+  font-family: "skoda_pro_light";
+  src: url("../fonts/skoda_pro_light-webfont.woff"); }
+@font-face {
+  font-family: "roboto-bold";
+  src: url("../fonts/roboto-bold-webfont.woff"); }
+@font-face {
+  font-family: "roboto-thin";
+  src: url("../fonts/roboto-thin-webfont.woff"); }
+@font-face {
+  font-family: "roboto-light";
+  src: url("../fonts/roboto-light-webfont.woff"); }
+@font-face {
+  font-family: "robotocondensed";
+  src: url("../fonts/robotocondensed-bold-webfont.woff"); }
+/*fonts*/
+/*mixin flex*/
+/*mixin flex*/
+/*general*/
+.upercase {
+  text-transform: uppercase; }
+
+.wrapper {
+  max-width: 1172px;
+  padding: 0 10px;
+  margin: 0 auto; }
+
+h1 {
+  font-family: "Skoda_pro_bold", sans-serif;
+  font-size: 75px;
+  color: #fff; }
+
+/*end general*/
+.mobile, .full_menu {
+  display: none; }
+
+@media screen and (max-width: 768px) {
+  .mobile {
+    display: block; } }
+.mobile .menu {
+  width: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: 32px;
+  left: 15px; }
+
+.full_menu.open {
+  display: block;
+  background: #0e0f3b;
+  width: 100%;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  position: fixed;
+  padding-top: 54px; }
+  .full_menu.open li {
+    width: 100%;
+    display: block;
+    text-align: center;
+    padding: 0; }
+    .full_menu.open li a {
+      font-size: 25px; }
+
+.close {
+  width: 30px;
+  position: absolute;
+  right: 15px;
+  top: 20px; }
+
+/*top*/
+.top {
+  background: url("../images/bg_main.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow-x: hidden; }
+  .top .scroll {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 31px;
+    cursor: pointer; }
+    @media screen and (max-width: 768px) {
+      .top .scroll {
+        display: none; } }
+  .top .logo {
+    display: block;
+    margin-top: 7px; }
+    @media screen and (max-width: 991px) {
+      .top .logo {
+        width: 95px; } }
+  .top .top_wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    -ms-align-items: flex-end;
+    align-items: flex-end;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding-top: 146px;
+    padding-bottom: 323px;
+    margin-right: 7%; }
+    @media screen and (max-width: 768px) {
+      .top .top_wrapper {
+        margin-right: 0;
+        padding-top: 33px;
+        padding-bottom: 100px; } }
+    .top .top_wrapper h1 {
+      font-size: 70px;
+      font-family: "robotocondensed", sans-serif;
+      text-align: center; }
+      @media screen and (max-width: 768px) {
+        .top .top_wrapper h1 {
+          font-size: 45px;
+          width: 100%; } }
+      @media screen and (max-width: 500px) {
+        .top .top_wrapper h1 {
+          font-size: 30px; } }
+  .top header {
+    padding-top: 25px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    background-color: #03091F;
+    box-shadow: 0px 10px 120px 48px rgba(3, 9, 31, 0.9); }
+    @media screen and (max-width: 768px) {
+      .top header {
+        padding-top: 0; } }
+    .top header .wrapper {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      height: 118px; }
+    @media screen and (max-width: 991px) {
+      .top header ul {
+        padding-top: 18px; } }
+    .top header li {
+      display: inline-block;
+      padding: 0 10px;
+      line-height: 60px;
+      cursor: pointer;
+      -moz-transition: 450ms ease 0s;
+      -o-transition: 450ms ease 0s;
+      -webkit-transition: 450ms ease 0s;
+      transition: 450ms ease 0s; }
+      @media screen and (max-width: 991px) {
+        .top header li {
+          line-height: 42px; } }
+      .top header li:last-child {
+        padding-right: 0; }
+        @media screen and (max-width: 1200px) {
+          .top header li:last-child {
+            padding-right: 10px; } }
+      .top header li:hover {
+        border-bottom: 5px solid #fff; }
+        @media screen and (max-width: 991px) {
+          .top header li:hover {
+            border-bottom: 3px solid #fff; } }
+    .top header nav {
+      margin-left: 37px; }
+      @media screen and (max-width: 1200px) {
+        .top header nav {
+          margin-right: 35px;
+          width: 100%;
+          text-align: right;
+          margin-left: 0; } }
+    @media screen and (max-width: 768px) {
+      .top header .nav {
+        display: none; } }
+    .top header nav a {
+      font-family: "Skoda_pro_bold", sans-serif;
+      font-size: 34px;
+      color: #fff;
+      text-decoration: none;
+      position: relative; }
+      @media screen and (max-width: 1200px) {
+        .top header nav a {
+          font-size: 26px; } }
+      @media screen and (max-width: 991px) {
+        .top header nav a {
+          font-size: 18px; } }
+  .top .btn_v1 {
+    background: url("../images/btn_v1.png") no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 70px;
+    display: block;
+    font-family: "Skoda_pro_bold", sans-serif;
+    font-size: 25px;
+    text-align: center;
+    line-height: 78px;
+    text-decoration: none;
+    color: #fff;
+    margin-right: 30px;
+    -moz-transition: 450ms ease 0s;
+    -o-transition: 450ms ease 0s;
+    -webkit-transition: 450ms ease 0s;
+    transition: 450ms ease 0s; }
+    @media screen and (max-width: 768px) {
+      .top .btn_v1 {
+        margin: 0 auto;
+        margin-bottom: 24px; } }
+    @media screen and (max-width: 500px) {
+      .top .btn_v1 {
+        background-size: contain;
+        width: 230px;
+        height: 65px;
+        line-height: 60px;
+        font-size: 20px;
+        margin-bottom: 10px; } }
+    .top .btn_v1:hover {
+      background: url("../images/btn_hover.png") no-repeat;
+      background-size: cover; }
+      @media screen and (max-width: 500px) {
+        .top .btn_v1:hover {
+          background-size: contain; } }
+  .top .btn_v2 {
+    background: url("../images/btn_v2.png") no-repeat;
+    background-size: cover;
+    width: 300px;
+    height: 70px;
+    text-align: center;
+    display: block;
+    line-height: 78px;
+    text-decoration: none;
+    color: #fff;
+    font-family: "Skoda_pro_bold", sans-serif;
+    font-size: 25px;
+    margin-bottom: 24px;
+    -moz-transition: 450ms ease 0s;
+    -o-transition: 450ms ease 0s;
+    -webkit-transition: 450ms ease 0s;
+    transition: 450ms ease 0s; }
+    @media screen and (max-width: 768px) {
+      .top .btn_v2 {
+        margin: 0 auto;
+        margin-bottom: 24px; } }
+    @media screen and (max-width: 500px) {
+      .top .btn_v2 {
+        background-size: contain;
+        width: 230px;
+        height: 65px;
+        line-height: 60px;
+        font-size: 20px;
+        margin-bottom: 10px; } }
+    .top .btn_v2:hover {
+      background: url("../images/btn_hover.png") no-repeat;
+      background-size: cover; }
+      @media screen and (max-width: 500px) {
+        .top .btn_v2:hover {
+          background-size: contain; } }
+  .top .group_btn {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 645px;
+    margin-top: 70px;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center; }
+    @media screen and (max-width: 768px) {
+      .top .group_btn {
+        margin-top: 40px; } }
+    .top .group_btn div {
+      cursor: pointer; }
+      @media screen and (max-width: 500px) {
+        .top .group_btn div {
+          position: relative;
+          display: block;
+          width: 100%; } }
+
+/*end top*/
+/*video_player*/
+.video_player .wrapper {
+  max-width: 1920px;
+  padding: 0; }
+
+.video_player .video {
+  width: 100%;
+  height: 1080px; }
+  @media screen and (max-width: 1200px) {
+    .video_player .video {
+      height: 650px; } }
+  @media screen and (max-width: 991px) {
+    .video_player .video {
+      height: 445px; } }
+
+/*video_player*/
+/*how_it_works*/
+.how_it_works {
+  text-align: center;
+  padding-top: 97px;
+  background: #fff;
+  padding-bottom: 179px; }
+  .how_it_works .wrapper {
+    max-width: 1188px; }
+  @media screen and (max-width: 991px) {
+    .how_it_works {
+      padding-top: 45px;
+      padding-bottom: 45px; } }
+  @media screen and (max-width: 500px) {
+    .how_it_works {
+      padding-top: 30px;
+      padding-bottom: 30px; } }
+  .how_it_works h1 {
+    background: linear-gradient(to right, #311024 0%, #311024 18%, #6f316f 50%, #311024 82%, #311024 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    font-size: 155px; }
+    @media screen and (max-width: 1200px) {
+      .how_it_works h1 {
+        font-size: 127px; } }
+    @media screen and (max-width: 991px) {
+      .how_it_works h1 {
+        font-size: 94px; } }
+    @media screen and (max-width: 768px) {
+      .how_it_works h1 {
+        font-size: 60px; } }
+    @media screen and (max-width: 500px) {
+      .how_it_works h1 {
+        font-size: 38px; } }
+  .how_it_works h2 {
+    font-family: "Skoda_pro_bold", sans-serif;
+    color: #000;
+    font-size: 65px;
+    margin-top: 89px;
+    margin-bottom: 39px; }
+    @media screen and (max-width: 1200px) {
+      .how_it_works h2 {
+        margin-top: 54px; } }
+    @media screen and (max-width: 991px) {
+      .how_it_works h2 {
+        margin-top: 25px;
+        margin-bottom: 21px; } }
+    @media screen and (max-width: 768px) {
+      .how_it_works h2 {
+        margin-top: 14px;
+        margin-bottom: 15px;
+        font-size: 44px; } }
+    @media screen and (max-width: 500px) {
+      .how_it_works h2 {
+        font-size: 30px; } }
+  .how_it_works h3 {
+    font-family: "Skoda_regular", sans-serif;
+    color: #000;
+    font-size: 45px;
+    margin-bottom: 52px; }
+    @media screen and (max-width: 991px) {
+      .how_it_works h3 {
+        font-size: 35px;
+        margin-bottom: 30px; } }
+    @media screen and (max-width: 768px) {
+      .how_it_works h3 {
+        font-size: 23px; } }
+    @media screen and (max-width: 500px) {
+      .how_it_works h3 {
+        font-size: 14px; } }
+
+.items {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  text-align: left;
+  font-family: "Skoda_regular", sans-serif; }
+  @media screen and (max-width: 991px) {
+    .items {
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
+  .items .item {
+    position: relative;
+    background: #f7f7f7;
+    margin: 0 10px;
+    padding-top: 35px;
+    padding-left: 14px;
+    padding-right: 27px;
+    overflow: hidden;
+    max-width: 232px;
+    margin-right: 23px;
+    height: 595px;
+    cursor: pointer;
+    -moz-transition: 450ms ease 0s;
+    -o-transition: 450ms ease 0s;
+    -webkit-transition: 450ms ease 0s;
+    transition: 450ms ease 0s; }
+    @media screen and (max-width: 1200px) {
+      .items .item {
+        padding-left: 10px;
+        padding-right: 10px;
+        height: 555px; } }
+    @media screen and (max-width: 991px) {
+      .items .item {
+        height: initial;
+        max-width: 400px;
+        margin: 0 auto;
+        margin-bottom: 25px; } }
+    @media screen and (max-width: 991px) {
+      .items .item {
+        background: url(../images/our_mission_hover.jpg) 0 0 no-repeat #220523;
+        background-size: cover; } }
+    .items .item:after {
+      content: "";
+      background: url(../images/our_mission_hover.jpg) 0 0 no-repeat #220523;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 444%;
+      height: 100%;
+      background-size: contain;
+      z-index: 1; }
+    .items .item:before {
+      content: "";
+      background: url(../images/our_mission_1.png) 0 0 no-repeat;
+      opacity: 1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 444%;
+      height: 100%;
+      background-size: contain;
+      z-index: 1; }
+      @media screen and (max-width: 991px) {
+        .items .item:before {
+          opacity: 0; } }
+    .items .item:hover:after {
+      opacity: 1; }
+      @media screen and (max-width: 991px) {
+        .items .item:hover:after {
+          opacity: 0; } }
+    .items .item:hover .count {
+      z-index: 3;
+      position: relative; }
+    .items .item:hover .title {
+      z-index: 3;
+      position: relative;
+      color: #fff; }
+    .items .item:hover .text {
+      z-index: 3;
+      position: relative;
+      color: #fff; }
+    .items .item .count {
+      font-family: "Skoda_regular", sans-serif;
+      color: #A80254;
+      font-size: 65px; }
+      @media screen and (max-width: 991px) {
+        .items .item .count {
+          font-size: 47px; } }
+    .items .item .title {
+      font-size: 30px;
+      color: #000;
+      margin-top: 44px;
+      line-height: 35px;
+      margin-bottom: 155px; }
+      @media screen and (max-width: 1200px) {
+        .items .item .title {
+          font-size: 23px;
+          margin-bottom: 85px; } }
+      @media screen and (max-width: 991px) {
+        .items .item .title {
+          margin-bottom: 32px;
+          margin-top: 20px;
+          color: #fff; } }
+    .items .item .text {
+      font-size: 20px;
+      color: #000;
+      line-height: 24px; }
+      @media screen and (max-width: 991px) {
+        .items .item .text {
+          padding-bottom: 30px;
+          font-size: 17px;
+          color: #fff; } }
+
+.item_4.item:hover:after {
+  background-position-x: -1146%;
+  height: 145%;
+  background-position-y: 10px; }
+
+.item_1.item:hover:after {
+  height: 147%;
+  background-position: 0; }
+
+.item_2.item:hover:after {
+  background-position-x: -400%;
+  height: 145%;
+  background-position-y: -18px; }
+
+.item_3.item:hover:after {
+  background-position-x: -632%;
+  height: 145%;
+  background-position-y: 7px; }
+
+.item_4.item:before {
+  background-position-x: -527%;
+  height: 100%;
+  background-position-y: 0; }
+
+.item_1.item:before {
+  height: 100%;
+  background-position: 0; }
+
+.item_2.item:before {
+  background-position-x: -192%;
+  height: 100%;
+  background-position-y: 0; }
+
+.item_3.item:before {
+  background-position-x: -267%;
+  height: 100%;
+  background-position-y: 0; }
+
+.items .item_3 .title {
+  margin-bottom: 83px; }
+  @media screen and (max-width: 991px) {
+    .items .item_3 .title {
+      margin-bottom: 32px; } }
+
+.items .item_4 .title {
+  margin-bottom: 47px; }
+  @media screen and (max-width: 991px) {
+    .items .item_4 .title {
+      margin-bottom: 32px; } }
+
+/*how_it_works*/
+/*roadmap*/
+.roadmap {
+  text-align: center;
+  color: #fff; }
+  @media screen and (max-width: 1450px) {
+    .roadmap {
+      overflow: auto; } }
+  .roadmap .roadmap_inner {
+    background: url(../images/bg_roadmap.jpg) no-repeat;
+    background-size: cover;
+    height: 1586px;
+    padding-top: 113px;
+    width: 100%; }
+    @media screen and (max-width: 1450px) {
+      .roadmap .roadmap_inner {
+        width: 1920px;
+        overflow-x: auto; } }
+  .roadmap .wrapper {
+    max-width: 1500px;
+    position: relative; }
+  .roadmap .roadmap_wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-width: 772px;
+    margin: 0 auto;
+    padding-top: 27px; }
+  .roadmap .map_2, .roadmap .map_4, .roadmap .map_6, .roadmap .map_8 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin-top: 4px;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
+    height: 113px; }
+  .roadmap .map_1, .roadmap .map_5, .roadmap .map_9 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    margin-top: 23px;
+    -webkit-justify-content: flex-start;
+    -moz-justify-content: flex-start;
+    -ms-justify-content: flex-start;
+    justify-content: flex-start;
+    -ms-flex-pack: flex-start;
+    height: 133px; }
+  .roadmap .map_3, .roadmap .map_7 {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-justify-content: flex-end;
+    justify-content: flex-end;
+    -ms-flex-pack: flex-end;
+    height: 133px;
+    margin-top: 23px; }
+  .roadmap .text {
+    opacity: 0.3;
+    position: absolute;
+    left: 10px;
+    height: 273px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    width: 258px;
+    text-align: left;
+    font-size: 20px; }
+  .roadmap .map_1 .text {
+    width: initial; }
+
+.road {
+  background: url("../images/roadmap1.png") no-repeat;
+  width: 310px;
+  height: 273px;
+  background-size: contain;
+  cursor: pointer;
+  position: relative;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -moz-transition: 450ms ease 0s;
+  -o-transition: 450ms ease 0s;
+  -webkit-transition: 450ms ease 0s;
+  transition: 450ms ease 0s;
+  z-index: 1; }
+  .road p {
+    font-family: "skoda_pro_light", sans-serif;
+    margin: auto;
+    font-size: 60px; }
+    .road p span {
+      font-size: 26px;
+      display: block; }
+
+.road:hover {
+  background: url("../images/hover_roadmap.png") no-repeat; }
+  .road:hover p {
+    font-family: "Skoda_pro_bold", sans-serif; }
+  .road:hover span {
+    font-family: "skoda_pro_light", sans-serif; }
+
+.road:hover + .text {
+  opacity: 1; }
+
+.map_1 .road:before {
+  content: '';
+  position: absolute;
+  background: url("../images/shape_1.png") no-repeat;
+  width: 87px;
+  height: 39px;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: -53px; }
+
+.map_2 .road:before {
+  content: '';
+  position: absolute;
+  background: url("../images/shape_2.png") no-repeat;
+  width: 355px;
+  height: 39px;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: -289px;
+  top: -124px; }
+
+.map_2 .text {
+  right: 73px;
+  left: initial;
+  margin-top: -63px;
+  max-width: 214px;
+  text-align: justify; }
+
+.map_3 .text {
+  right: 25px;
+  left: initial; }
+
+.map_6 .text {
+  right: 25px;
+  left: initial;
+  margin-top: -63px; }
+
+.map_7 .text {
+  right: 25px;
+  left: initial; }
+
+.map_1 .text {
+  margin-top: -4px; }
+
+.map_4 .text {
+  margin-top: -64px;
+  left: 41px; }
+
+.map_5 .text {
+  margin-top: 8px;
+  left: 41px; }
+
+.map_8 .text {
+  margin-top: -55px;
+  left: 41px; }
+
+.map_9 .text {
+  margin-top: -2px;
+  left: 41px; }
+
+.map_3 .road:before {
+  content: '';
+  position: absolute;
+  background: url("../images/shape_3.png") no-repeat;
+  width: 87px;
+  height: 39px;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: -53px; }
+
+.map_4 .road:before {
+  content: '';
+  position: absolute;
+  background: url("../images/shape_4.png") no-repeat;
+  width: 355px;
+  height: 39px;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: -289px;
+  top: -124px; }
+
+.map_5 .road:before {
+  content: '';
+  position: absolute;
+  background: url("../images/shape_5.png") no-repeat;
+  width: 87px;
+  height: 39px;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: -53px; }
+
+.map_6 .road:before {
+  content: '';
+  position: absolute;
+  background: url("../images/shape_6.png") no-repeat;
+  width: 355px;
+  height: 39px;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: -289px;
+  top: -124px; }
+
+.map_7 .road:before {
+  content: '';
+  position: absolute;
+  background: url("../images/shape_7.png") no-repeat;
+  width: 87px;
+  height: 39px;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: -53px; }
+
+.map_8 .road:before {
+  content: '';
+  position: absolute;
+  background: url("../images/shape_8.png") no-repeat;
+  width: 355px;
+  height: 39px;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: -289px;
+  top: -124px; }
+
+.map_9 .road:before {
+  content: '';
+  position: absolute;
+  background: url("../images/shape_9.png") no-repeat;
+  width: 87px;
+  height: 39px;
+  background-size: contain;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: -53px; }
+
+/*roadmap*/
+/*our_app*/
+.our_app {
+  background: url("../images/bg_our_app.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  padding-top: 98px; }
+  @media screen and (max-width: 1200px) {
+    .our_app {
+      padding-top: 60px; } }
+  @media screen and (max-width: 768px) {
+    .our_app {
+      padding-top: 20px; } }
+  .our_app .wrapper {
+    max-width: 1247px; }
+  .our_app h1 {
+    color: #000;
+    text-align: right;
+    padding-top: 15px;
+    padding-right: 83px; }
+    @media screen and (max-width: 1200px) {
+      .our_app h1 {
+        font-size: 65px; } }
+    @media screen and (max-width: 768px) {
+      .our_app h1 {
+        font-size: 45px;
+        padding-right: 30px; } }
+  .our_app .owl-carousel {
+    margin-top: -16px; }
+  .our_app .our_app_wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    width: 100%; }
+    @media screen and (max-width: 1200px) {
+      .our_app .our_app_wrapper div {
+        padding: 0 10px; } }
+    .our_app .our_app_wrapper .hand {
+      margin-right: 64px; }
+      @media screen and (max-width: 1200px) {
+        .our_app .our_app_wrapper .hand {
+          width: 50%;
+          height: 50%;
+          margin-right: 15px; } }
+      @media screen and (max-width: 768px) {
+        .our_app .our_app_wrapper .hand {
+          width: 200px;
+          height: 100%;
+          margin-top: 140px; } }
+      @media screen and (max-width: 500px) {
+        .our_app .our_app_wrapper .hand {
+          display: none; } }
+    .our_app .our_app_wrapper ul {
+      margin-top: 72px; }
+      @media screen and (max-width: 991px) {
+        .our_app .our_app_wrapper ul {
+          margin-top: 50px; } }
+      @media screen and (max-width: 500px) {
+        .our_app .our_app_wrapper ul {
+          margin-bottom: 35px; } }
+    .our_app .our_app_wrapper li {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-align-items: top;
+      -moz-align-items: top;
+      -ms-align-items: top;
+      align-items: top;
+      margin-bottom: 50px; }
+      @media screen and (max-width: 991px) {
+        .our_app .our_app_wrapper li {
+          margin-bottom: 25px; } }
+      @media screen and (max-width: 768px) {
+        .our_app .our_app_wrapper li {
+          margin-bottom: 12px; } }
+      .our_app .our_app_wrapper li p {
+        font-family: "Skoda_regular", sans-serif;
+        font-size: 20px;
+        line-height: 25px;
+        margin-top: -5px; }
+        @media screen and (max-width: 1200px) {
+          .our_app .our_app_wrapper li p {
+            font-size: 16px;
+            line-height: 23px; } }
+        @media screen and (max-width: 768px) {
+          .our_app .our_app_wrapper li p {
+            font-size: 11px;
+            line-height: 20px; } }
+    .our_app .our_app_wrapper li img {
+      width: 116px;
+      margin-right: 70px;
+      height: 50%; }
+      @media screen and (max-width: 1200px) {
+        .our_app .our_app_wrapper li img {
+          margin-right: 13px; } }
+      @media screen and (max-width: 991px) {
+        .our_app .our_app_wrapper li img {
+          width: 90px;
+          height: 50%; } }
+      @media screen and (max-width: 768px) {
+        .our_app .our_app_wrapper li img {
+          width: 60px; } }
+
+/*our_app*/
+/*team*/
+.team {
+  color: #fff;
+  background: url("../images/bg_team.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding-top: 114px;
+  padding-bottom: 107px; }
+  @media screen and (max-width: 1200px) {
+    .team {
+      padding-top: 60px;
+      padding-bottom: 60px; } }
+  @media screen and (max-width: 768px) {
+    .team {
+      padding-top: 30px;
+      padding-bottom: 30px; } }
+  .team .team_wrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-top: 60px; }
+  .team .group {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center; }
+    @media screen and (max-width: 768px) {
+      .team .group {
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+    .team .group:first-child {
+      margin-bottom: 85px; }
+      @media screen and (max-width: 768px) {
+        .team .group:first-child {
+          margin-bottom: 0px; } }
+    .team .group:last-child {
+      margin-top: 53px; }
+      @media screen and (max-width: 768px) {
+        .team .group:last-child {
+          margin-bottom: 0px; } }
+    .team .group div {
+      margin: 0 25px; }
+      @media screen and (max-width: 1200px) {
+        .team .group div {
+          margin: 0 15px; } }
+    @media screen and (max-width: 1200px) {
+      .team .group img {
+        width: 210px; } }
+    @media screen and (max-width: 991px) {
+      .team .group img {
+        width: 155px; } }
+    @media screen and (max-width: 768px) {
+      .team .group img {
+        width: 200px; } }
+  .team h1 {
+    color: #fff;
+    text-align: center; }
+    @media screen and (max-width: 1200px) {
+      .team h1 {
+        font-size: 65px; } }
+    @media screen and (max-width: 768px) {
+      .team h1 {
+        font-size: 45px; } }
+  .team h6 {
+    font-family: "roboto-bold", sans-serif;
+    font-size: 30px;
+    margin-top: 12px;
+    line-height: 33px;
+    margin-bottom: 25px; }
+    @media screen and (max-width: 991px) {
+      .team h6 {
+        font-size: 25px;
+        margin-top: 5px;
+        line-height: 29px;
+        margin-bottom: 13px; } }
+  .team p {
+    font-family: "roboto-thin", sans-serif;
+    font-size: 30px;
+    line-height: 35px; }
+    @media screen and (max-width: 991px) {
+      .team p {
+        font-size: 20px;
+        line-height: 25px; } }
+    @media screen and (max-width: 768px) {
+      .team p {
+        margin-bottom: 35px; } }
+
+/*end team*/
+/*questions*/
+.faq {
+  padding-top: 111px;
+  padding-bottom: 82px; }
+  @media screen and (max-width: 1200px) {
+    .faq {
+      padding-top: 60px;
+      padding-bottom: 60px; } }
+  @media screen and (max-width: 768px) {
+    .faq {
+      padding-top: 30px;
+      padding-bottom: 30px; } }
+
+.faq h1 {
+  color: #2f005e;
+  text-align: center;
+  margin-bottom: 85px; }
+  @media screen and (max-width: 1200px) {
+    .faq h1 {
+      font-size: 65px; } }
+  @media screen and (max-width: 991px) {
+    .faq h1 {
+      font-size: 55px;
+      margin-bottom: 43px; } }
+  @media screen and (max-width: 768px) {
+    .faq h1 {
+      font-size: 35px;
+      margin-bottom: 35px; } }
+  @media screen and (max-width: 500px) {
+    .faq h1 {
+      line-height: 40px; } }
+
+.faq dd {
+  display: none;
+  margin-top: -29px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #9e99b5; }
+
+.faq dt {
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 33px;
+  position: relative; }
+
+dd p {
+  max-width: 511px;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 38px;
+  line-height: 20px;
+  text-align: justify;
+  font-family: "roboto-light", sans-serif;
+  color: #878787; }
+  @media screen and (max-width: 1200px) {
+    dd p {
+      max-width: 50%; } }
+  @media screen and (max-width: 991px) {
+    dd p {
+      max-width: 100%; } }
+
+dd .video {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  max-width: 535px;
+  width: 100%; }
+  @media screen and (max-width: 1200px) {
+    dd .video {
+      max-width: 42%; } }
+  @media screen and (max-width: 991px) {
+    dd .video {
+      position: relative;
+      top: 0;
+      right: 0;
+      max-width: 500px;
+      width: 100%; } }
+
+.faq_group {
+  position: relative;
+  padding: 0 13px; }
+
+dt a {
+  font-family: "roboto-bold", sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: #5c0091; }
+  @media screen and (max-width: 768px) {
+    dt a {
+      font-size: 17px; } }
+
+/*questions*/
+/*footer*/
+footer {
+  background: url("../images/bg_footer.jpg") no-repeat;
+  background-size: cover;
+  padding: 50px 0; }
+  @media screen and (max-width: 1200px) {
+    footer {
+      padding: 30px 0; } }
+  footer .wrapper {
+    max-width: 1120px; }
+  footer ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    justify-content: space-between;
+    -ms-flex-pack: space-between;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    align-items: center; }
+    @media screen and (max-width: 991px) {
+      footer ul {
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
+  footer li {
+    display: inline-block; }
+    @media screen and (max-width: 991px) {
+      footer li {
+        margin-bottom: 24px; } }
+    @media screen and (max-width: 991px) {
+      footer li:last-child {
+        margin-bottom: 0px; } }
+    footer li:first-child a {
+      display: inline-block; }
+    footer li a {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      font-family: "Skoda_pro_bold", sans-serif;
+      font-size: 18px;
+      text-decoration: none;
+      color: #fff;
+      opacity: 0.8;
+      -moz-transition: 450ms ease 0s;
+      -o-transition: 450ms ease 0s;
+      -webkit-transition: 450ms ease 0s;
+      transition: 450ms ease 0s; }
+      @media screen and (max-width: 1200px) {
+        footer li a {
+          font-size: 16px; } }
+      footer li a span {
+        font-family: "Skoda_regular", sans-serif; }
+      footer li a:hover {
+        opacity: 1; }
+      footer li a img {
+        margin-right: 10px;
+        margin-top: -2px; }
+
+/*footer*/
+/*slider*/
+.owl-dot {
+  display: inline-block;
+  background: #98C1D8 !important;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+  margin: 0 6px;
+  outline: none; }
+  @media screen and (max-width: 768px) {
+    .owl-dot {
+      width: 14px;
+      height: 14px; } }
+
+.owl-dot.active {
+  background: #021434 !important; }
+
+.owl-dots {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 35px; }
+  @media screen and (max-width: 768px) {
+    .owl-dots {
+      bottom: 5px; } }
+
+.owl-nav {
+  display: none; }
+
+/*slider*/
+
+/*# sourceMappingURL=style.css.map */
