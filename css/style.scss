@@ -441,6 +441,7 @@ h1{
       margin-top: 40px;
     }
     div{
+      cursor: pointer;
       @include phone{
         position: relative;
         display: block;
@@ -569,6 +570,8 @@ h1{
     max-width: 232px;
     margin-right: 23px;
     height: 595px;
+    cursor: pointer;
+    @include transition($transition);
     @include laptop{
       padding-left: 10px;
       padding-right: 10px;
@@ -595,11 +598,8 @@ h1{
       top: 0;
       width: 444%;
       height: 100%;
-      background-size: cover;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
+      background-size: contain;
+
 
       z-index: 1;
     }
@@ -610,12 +610,9 @@ h1{
       position: absolute;
       left: 0;
       top: 0;
-      width: 400%;
+      width: 444%;
       height: 100%;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
+
       background-size: contain;
       z-index: 1;
       @include tablet{
@@ -627,6 +624,23 @@ h1{
       @include tablet{
         opacity: 0;
       }
+
+    }
+    &:hover .count{
+      z-index: 3;
+      position: relative;
+
+    }
+    &:hover .title{
+      z-index: 3;
+      position: relative;
+      color: $white;
+
+    }
+    &:hover .text{
+      z-index: 3;
+      position: relative;
+      color: $white;
 
     }
     .count{
@@ -669,6 +683,46 @@ h1{
 
 
   }
+}
+.item_4.item:hover:after{
+  background-position-x: -1146%;
+  height: 145%;
+  background-position-y: 10px
+}
+.item_1.item:hover:after{
+  height: 147%;
+  background-position: 0;
+
+}
+.item_2.item:hover:after{
+  background-position-x: -400%;
+  height: 145%;
+  background-position-y: -18px;
+}
+.item_3.item:hover:after{
+  background-position-x: -632%;
+  height: 145%;
+  background-position-y: 7px;
+}
+.item_4.item:before{
+  background-position-x: -527%;
+  height: 100%;
+  background-position-y: 0;
+}
+.item_1.item:before{
+  height: 100%;
+  background-position: 0;
+
+}
+.item_2.item:before{
+  background-position-x: -192%;
+  height: 100%;
+  background-position-y: 0;
+}
+.item_3.item:before{
+  background-position-x: -267%;
+  height: 100%;
+  background-position-y: 0;
 }
 .items .item_3 .title{
   margin-bottom: 83px;
