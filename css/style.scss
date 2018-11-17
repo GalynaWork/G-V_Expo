@@ -1160,7 +1160,7 @@ h1{
     &:last-child{
       margin-top: 53px;
       @include mobile{
-        margin-bottom: 0px;
+        margin-top: 0px;
       }
 
     }
