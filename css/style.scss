@@ -74,6 +74,10 @@ $transition: 450ms ease 0s;
   src: url("../fonts/skoda_pro_light-webfont.woff");
 }
 @font-face {
+  font-family: "skoda_pro_extra_bold";
+  src: url("../fonts/skoda_pro_extrabold-webfont.woff");
+}
+@font-face {
   font-family: "roboto-bold";
   src: url("../fonts/roboto-bold-webfont.woff");
 }
@@ -92,6 +96,7 @@ $transition: 450ms ease 0s;
 $SkodaBold: 'Skoda_pro_bold', sans-serif;
 $SkodaRegular: 'Skoda_regular', sans-serif;
 $SkodaLight: 'skoda_pro_light', sans-serif;
+$SkodaExtraBold: 'skoda_pro_extra_bold', sans-serif;
 $RobotoBold: 'roboto-bold', sans-serif;
 $RobotoThin: 'roboto-thin', sans-serif;
 $RobotoLight: 'roboto-light', sans-serif;
@@ -171,6 +176,9 @@ $mobile: 768;
 .upercase{
   text-transform: uppercase;
 }
+body,html{
+  overflow-x: hidden;
+}
 .wrapper{
   max-width: 1172px;
 
@@ -184,6 +192,7 @@ h1{
 }
 /*end general*/
 
+@keyframes spin{0%{opacity:0;} 50%{opacity:1;} 100%{opacity:0;}}
 
 
 .mobile,.full_menu{
@@ -216,6 +225,7 @@ h1{
   top: 0;
   position: fixed;
   padding-top: 54px;
+
   li{
     width: 100%;
     display: block;
@@ -237,8 +247,29 @@ h1{
   background: url("../images/bg_main.jpg") no-repeat;
   background-size: cover;
   position: relative;
-  overflow-x: hidden;
+  height: 100vh;
+  @include flexbox();
+  @include flex-direction(column);
+  .light{
+
+    left: 0;
+    top: 0;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: url(../images/bg_main1.jpg) no-repeat;
+    background-size: cover;
+    animation-name: spin;
+    animation-duration: 2500ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    opacity: 0;
+  }
+
   .scroll{
+    height: 65px;
     position: absolute;
     bottom: 12px;
     left: 0;
@@ -246,15 +277,37 @@ h1{
     margin: auto;
     width: 31px;
     cursor: pointer;
+    @include maxlaptop{
+      bottom: -4px;
+    }
+    @include laptop{
+      display: none;
+    }
     @include mobile{
       display: none;
+    }
+    img{
+      @include maxlaptop{
+        height: 50px;
+      }
     }
   }
   .logo{
     display: block;
     margin-top: 7px;
+    z-index: 2;
+
     @include tablet{
       width: 95px;
+    }
+    @include mobile{
+      z-index: 1;
+      width: 75px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      top: 7px;
     }
   }
 
@@ -262,39 +315,56 @@ h1{
     @include flexbox();
     @include align-items(flex-end);
     @include flex-direction(column);
-    padding-top: 146px;
-    padding-bottom: 323px;
-    margin-right: 7%;
+
+    margin-right: 4%;
+    @include justify-content(center);
+    height: calc(100vh - 135px);
+
     @include mobile{
       margin-right: 0;
-      padding-top: 33px;
+      padding-top: 43px;
       padding-bottom: 100px;
     }
     h1{
+      z-index: 2;
       font-size: 70px;
       font-family: $robotocondensed;
       text-align: center;
+      max-width: 645px;
+      width: 100%;
+      @include mobile{
+        z-index: 1;
+      }
+      @include maxlaptop{
+        font-size: 59px;
+      }
       @include mobile{
         font-size: 45px;
         width: 100%;
       }
       @include phone{
-        font-size: 30px;
+        font-size: 27px;
       }
       }
     }
 
   header {
+    z-index: 2;
+    height: 70px;
     padding-top: 25px;
     @include flexbox();
     background-color: $blackRussian;
     box-shadow: 0px 10px 120px 48px rgba(3, 9, 31,0.9);
     @include mobile{
       padding-top: 0;
+      z-index: 1;
     }
     .wrapper{
       @include flexbox();
       height: 118px;
+      @include justify-content(space-between);
+      width: 100%;
+
     }
     ul{
       @include tablet{
@@ -327,8 +397,50 @@ h1{
 
       }
     }
+    .language{
+      z-index: 2;
+      position: absolute;
+      right: -102px;
+      top: 14px;
+      @media (max-width:1300px) {
+        right: -65px;
+
+      }
+      @include laptop{
+        right: -31px;
+        top: 18px;
+      }
+      @include mobile{
+        z-index: 1;
+        top: 9px;
+      }
+      li{
+        line-height: initial;
+        display: block;
+        &:hover{
+          border-bottom: none;
+        }
+      }
+
+      a {
+        font-family: "Skoda_pro_bold", sans-serif;
+        font-size: 28px;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        opacity: 0.3;
+        transition: 450ms ease 0s;
+        @include laptop{
+          font-size: 19px;
+        }
+        &:hover {
+          opacity: 1;
+        }
+    }
+    }
     nav{
-      margin-left: 37px;
+      margin-right: 55px;
+      position: relative;
       @include laptop{
         margin-right: 35px;
         width: 100%;
@@ -345,12 +457,12 @@ h1{
     }
     nav a {
       font-family: $SkodaBold;
-      font-size: 34px;
+      font-size: 28px;
       color: $white;
       text-decoration: none;
       position: relative;
       @include laptop{
-        font-size: 26px;
+        font-size: 19px;
       }
       @include tablet{
         font-size: 18px;
@@ -432,6 +544,7 @@ h1{
       }
   }
   .group_btn{
+    z-index: 2;
     @include flexbox();
     @include flex-wrap(wrap);
     max-width: 645px;
@@ -439,6 +552,7 @@ h1{
     @include justify-content(center);
     @include mobile{
       margin-top: 40px;
+      z-index: 1;
     }
     div{
       cursor: pointer;
@@ -459,7 +573,7 @@ h1{
 
 /*video_player*/
 .video_player .wrapper{
-  max-width: 1920px;
+  max-width: 100%;
   padding: 0;
 }
 .video_player .video{
@@ -738,7 +852,484 @@ h1{
 }
 
 /*how_it_works*/
+/*kmts_roadmap*/
+.kmts_roadmap{
+  background: url(../images/bg_roadmap1.jpg) no-repeat;
+  background-size: cover;
+  @include mobile{
+    width: 992px;
+    overflow: auto;
+  }
+}
+.kmts.roadmap{
+  padding-top: 115px;
+  @include laptop{
+    padding-top: 50px;
+  }
+  .kmts_wrapper{
+    max-width: 800px;
+    margin: 0 auto;
+    margin-left: 137px;
+    @include maxlaptop{
+      max-width: 614px;
+      margin: 0 auto;
+      margin-left: 50px;
+      position: relative;
+    }
+    @include laptop{
+      max-width: 450px;
+    }
+  }
+  h1{
+    margin-bottom: 98px;
+    @include laptop{
+      font-size: 65px;
+    }
+      @include phone{
+        font-size: 38px;
+      }
 
+}
+  .road{
+    background: url(../images/ktms1.png) no-repeat;
+    background-size: cover;
+    width: 310px;
+    height: 268px;
+    @include justify-content(center);
+    @include align-items(center);
+    @include maxlaptop{
+      width: 250px;
+      height: 218px;
+    }
+    @include laptop{
+      width: 185px;
+      height: 164px;
+    }
+
+  }
+  .road:hover {
+    background: url(../images/ktms_hover1.png) no-repeat;
+    background-size: cover;
+    width: 310px;
+    height: 268px;
+    @include maxlaptop{
+      width: 250px;
+      height: 218px;
+    }
+    @include laptop{
+      width: 185px;
+      height: 164px;
+    }
+  }
+  .road:hover + .text span{
+    font-family: "skoda_pro_extra_bold", sans-serif;
+    opacity: 1;
+  }
+  .road:hover + .text p{
+    opacity: 1;
+    font-family: "Skoda_pro_bold", sans-serif;
+  }
+  .text{
+    @include flex-direction(column);
+    @include align-items( baseline);
+    opacity: 1;
+    left: initial;
+    width: initial;
+    right: 191px;
+    height: 203px;
+    p{
+      opacity: 0.3;
+      font-size: 21px;
+
+      @include laptop{
+        font-size: 16px;
+        width: 229px;
+      }
+    }
+  }
+  .text span{
+    font-family: "Skoda_regular", sans-serif;
+    font-size: 70px;
+    display: block;
+    line-height: 70px;
+    @include laptop{
+      font-size: 55px;
+      line-height: 45px;
+    }
+  }
+  .map_1 .road:before,.map_2 .road:before,.map_3 .road:before,.map_4 .road:before,.map_5 .road:before,
+  .map_6 .road:before,.map_7 .road:before,.map_8 .road:before{
+     background: url(../images/line.png) no-repeat;
+     background-repeat-x: repeat;
+
+   }
+  .kmts_wrapper .map_1 .text{
+    @include maxlaptop{
+    margin-top: -26px;
+    left: initial;
+    right: -400px;
+    width: initial;
+    }
+    @include laptop{
+      right: -350px;
+    }
+
+  }
+  .kmts_wrapper .map_1 {
+    height: 200px;
+    @include maxlaptop{
+      height: 179px;
+    }
+    @include laptop{
+      height: 138px;
+    }
+
+  }
+  .kmts_wrapper .map_2{
+    height: 216px;
+    @include maxlaptop{
+      height: 179px;
+      margin: 0;
+    }
+    @include laptop{
+      height: 138px;
+    }
+  }
+  .kmts_wrapper .map_3{
+    height: 237px;
+    @include maxlaptop{
+      height: 179px;
+      margin: 0;
+    }
+    @include laptop{
+      height: 138px;
+    }
+  }
+  .kmts_wrapper .map_4{
+    height: 173px;
+    @include maxlaptop{
+      height: 179px;
+      margin: 0;
+    }
+    @include laptop{
+      height: 138px;
+    }
+  }
+  .kmts_wrapper .map_5{
+    @include laptop{
+      height: 138px;
+      margin: 0;
+    }
+  }
+
+  .map_2 .text {
+
+    left: initial;
+    margin-top: -3px;
+    max-width: 100%;
+    right: 228px;
+    text-align: justify;
+    @include maxlaptop{
+      right: -365px;
+      margin-top: -29px;
+    }
+    @include laptop{
+      right: -404px;
+    }
+  }
+  .map_3 .text {
+    left: initial;
+    right: 310px;
+    text-align: justify;
+    @include maxlaptop{
+      right: -295px;
+    }
+    @include laptop{
+      right: -350px;
+    }
+  }
+  .map_4 .text {
+    margin-top: 0;
+    right: 185px;
+    @include maxlaptop{
+      right: -420px;
+    }
+    @include laptop{
+      right: -350px;
+    }
+  }
+  .map_5 .text {
+    margin-top: 0;
+    left: initial;
+    right: 241px;
+    @include maxlaptop{
+      right: -363px;
+    }
+    @include laptop{
+      right: -348px;
+    }
+  }
+
+  .map_2 .road:before{
+    width: 288px;
+    height: 3px;
+    background-size: contain;
+
+    bottom: 0;
+    margin: auto;
+    left: 277px;
+    top: 6px;
+    @include maxlaptop{
+      width: 295px;
+
+      left: 235px;
+      top: 1px;
+    }
+    @include laptop{
+      width: 295px;
+      left: 173px;
+      top: 1px;
+    }
+  }
+
+  .map_1 .road:before{
+    width: 555px;
+    height: 3px;
+    background-size: contain;
+    top: 7px;
+    bottom: 0;
+    margin: auto;
+    left: 296px;
+    @include maxlaptop{
+      width: 479px;
+
+      left: 233px;
+    }
+    @include laptop{
+      width: 434px;
+      left: 172px;
+      top: -1px;
+    }
+  }
+  .map_3 .road:before {
+    content: '';
+    position: absolute;
+
+    width: 61px;
+    height: 3px;
+    background-size: contain;
+    bottom: 0;
+    margin: auto;
+    right: initial;
+    top: 7px;
+    left: 293px;
+    @include maxlaptop{
+      width: 117px;
+
+      right: initial;
+      top: 3px;
+      left: 237px;
+    }
+    @include laptop{
+      width: 160px;
+      right: initial;
+      top: 0px;
+      left: 175px;
+    }
+  }
+  .map_4 .road:before {
+    content: '';
+    position: absolute;
+
+    width: 306px;
+    height: 3px;
+    background-size: contain;
+
+    bottom: 0;
+    margin: auto;
+    left: 289px;
+    top: 5px;
+    @include maxlaptop{
+      left: 236px;
+    }
+    @include laptop{
+      left: 173px;
+      width: 295px;
+      top: 1px;
+    }
+  }
+  .map_5 .road:before {
+    content: '';
+    position: absolute;
+
+    width: 547px;
+    height: 3px;
+    background-size: contain;
+    top: 4px;
+    bottom: 0;
+    margin: auto;
+    left: 293px;
+    @include maxlaptop{
+      width: 492px;
+
+      left: 235px;
+    }
+    @include laptop{
+      width: 428px;
+      left: 173px;
+      top: 1px;
+    }
+  }
+  .kmts_wrapper1{
+    max-width: 800px;
+    margin: 0 auto;
+    margin-right: 137px;
+    margin-top: 193px;
+    margin-bottom: 192px;
+    position: relative;
+    @include maxlaptop{
+      max-width: 614px;
+      margin-top: 153px;
+      margin-bottom: 152px;
+      margin-right: 140px;
+      position: relative;
+    }
+    @include laptop{
+      max-width: 450px;
+      margin-top: 83px;
+      margin-bottom: 4px
+    }
+    .text span{
+      width: 300px;
+      text-align: right;
+      @include laptop{
+        width: 221px;
+      }
+    }
+    .map_6{
+      @include justify-content(flex-end);
+      height: 178px;
+      @include maxlaptop{
+        height: 179px;
+        margin: 0;
+      }
+      @include laptop{
+        height: 138px;
+      }
+    }
+    .map_7{
+      @include justify-content(center);
+      height: 247px;
+      @include maxlaptop{
+        height: 179px;
+        margin: 0;
+      }
+      @include laptop{
+        height: 138px;
+      }
+    }
+    .map_8{
+      @include justify-content(flex-start);
+      height: 178px;
+      @include maxlaptop{
+        height: 179px;
+        margin: 0;
+      }
+      @include laptop{
+        height: 138px;
+      }
+    }
+    .map_6 .text{
+      margin-top: 21px;
+      left: -375px;
+      @include maxlaptop{
+        margin-top: 0px;
+      }
+      p{
+        text-align: right;
+
+      }
+    }
+    .map_7 .text{
+      margin-top: 21px;
+      left: -375px;
+      @include maxlaptop{
+        margin-top: 0px;
+      }
+    }
+    .map_8 .text{
+        margin-top: 21px;
+        left: -375px;
+        @include maxlaptop{
+          margin-top: 0px;
+      }
+      }
+
+
+    .map_6 .road:before {
+      width: 559px;
+      height: 3px;
+      background-size: contain;
+      bottom: 0;
+      margin: auto;
+      right: 291px;
+      top: 5px;
+      @include maxlaptop{
+        right: 237px;
+        width: 398px;
+      }
+      @include laptop{
+        right: 177px;
+        width: 371px;
+        top: 0px;
+      }
+    }
+    .map_7 .road:before {
+      width: 316px;
+      height: 3px;
+      background-size: contain;
+      bottom: 0;
+      margin: auto;
+      right: 294px;
+      top: 5px;
+      @include maxlaptop{
+        right: 237px;
+        width: 216px;
+      }
+      @include laptop{
+        right: 175px;
+        width: 243px;
+        top: 1px;
+      }
+    }
+    .map_8 .road:before {
+      width: 62px;
+      height: 3px;
+      background-size: contain;
+      bottom: 0;
+      margin: auto;
+      right: 71px;
+      top: 5px;
+      @include maxlaptop{
+        width: 30px;
+        right: -26px;
+      }
+      @include laptop{
+        width: 100px;
+        right: -9px;
+        top: 1px;
+      }
+
+    }
+    .text p{
+      text-align: right;
+
+
+    }
+  }
+}
+
+/*kmts_roadmap*/
 /*roadmap*/
 .roadmap{
 
@@ -749,18 +1340,28 @@ h1{
   color: $white;
 
   @include maxlaptop{
-    overflow: auto;
+
+  }
+  h1{
+    @include laptop{
+      font-size: 65px;
+    }
+    @include phone{
+      font-size: 38px;
+    }
   }
   .roadmap_inner{
-    background: url(../images/bg_roadmap.jpg) no-repeat;
-    background-size: cover;
+    //background: url(../images/bg_roadmap.jpg) no-repeat;
+    //background-size: cover;
     height: 1586px;
     padding-top: 113px;
     width: 100%;
 
+
     @include maxlaptop{
-      width: 1920px;
-      overflow-x: auto;
+      width: 100%;
+      height: auto;
+
     }
 
 
@@ -775,6 +1376,14 @@ h1{
     max-width: 772px;
     margin: 0 auto;
     padding-top: 27px;
+    @include maxlaptop{
+      max-width: 605px;
+      padding-bottom: 134px;
+    }
+    @include laptop{
+      max-width: 450px;
+      padding-bottom: 134px;
+    }
   }
 
   .map_2,.map_4,.map_6,.map_8 {
@@ -782,12 +1391,20 @@ h1{
     margin-top: 4px;
     @include justify-content(center);
     height: 113px;
+    @include laptop{
+      height: 100px;
+      margin: 0;
+    }
   }
   .map_1,.map_5,.map_9{
     @include flexbox();
     margin-top: 23px;
     @include justify-content(flex-start);
     height: 133px;
+    @include laptop{
+      height: 100px;
+      margin: 0;
+    }
   }
   .map_3,.map_7{
       @include flexbox();
@@ -795,6 +1412,10 @@ h1{
       @include justify-content(flex-end);
       height: 133px;
       margin-top: 23px;
+      @include laptop{
+        height: 100px;
+        margin: 0;
+    }
   }
 
   .text{
@@ -808,11 +1429,26 @@ h1{
     align-items: center;
     width: 258px;
     text-align: left;
-    font-size: 20px;
+
+    font-size: 19px;
+    font-family: "Skoda_pro_bold", sans-serif;
+    line-height: 26px;
+    @include laptop{
+      height: 207px;
+      line-height: 22px;
+      font-size: 16px;
+      max-width: 174px
+    }
 
   }
   .map_1 .text{
     width: initial;
+    @include maxlaptop{
+      width: 209px;
+      text-align: center;
+      margin-top: -30px;
+      left: 33px;
+    }
   }
 
 }
@@ -826,18 +1462,43 @@ h1{
   @include flexbox();
   @include transition($transition);
   z-index: 1;
+  @include maxlaptop{
+    width: 250px;
+    height: 218px;
+  }
+  @include laptop{
+    width: 185px;
+    height: 164px;
+  }
   p{
     font-family: $SkodaLight;
     margin: auto;
     font-size: 60px;
+    @include laptop{
+      font-size: 39px;
+    }
     span{
       font-size: 26px;
       display: block;
+      @include laptop{
+        font-size: 21px;
+      }
     }
   }
 }
 .road:hover{
   background: url("../images/hover_roadmap.png") no-repeat;
+  width: 310px;
+  height: 273px;
+  background-size: contain;
+  @include maxlaptop{
+    width: 250px;
+    height: 218px;
+  }
+  @include laptop{
+    width: 185px;
+    height: 164px;
+  }
   p{
     font-family: $SkodaBold;
   }
@@ -859,7 +1520,7 @@ h1{
   top: 0;
   bottom: 0;
   margin: auto;
-  left: -53px;
+  left: -57px;
 }
 .map_2 .road:before{
   content: '';
@@ -873,6 +1534,13 @@ h1{
   margin: auto;
   right: -289px;
   top: -124px;
+  @include maxlaptop{
+    width: 330px;
+    right: -263px;
+  }
+  @include laptop{
+    right: -269px;
+  }
 }
 .map_2 .text{
   right: 73px;
@@ -880,11 +1548,18 @@ h1{
   margin-top: -63px;
   max-width: 214px;
   text-align: justify;
+  @include maxlaptop{
+    right: 68px;
+    margin-top: -72px;
+  }
 
 }
 .map_3 .text{
   right: 25px;
   left: initial;
+  @include maxlaptop{
+    margin-top: -28px;
+  }
 
 }
 .map_6 .text{
@@ -904,6 +1579,10 @@ h1{
 .map_4 .text{
   margin-top: -64px;
   left: 41px;
+  @include maxlaptop{
+    margin-top: -77px;
+
+  }
 }
 .map_5 .text{
   margin-top: 8px;
@@ -929,6 +1608,13 @@ h1{
   bottom: 0;
   margin: auto;
   right: -53px;
+  @include maxlaptop{
+    width: 76px;
+    right: -38px;
+  }
+  @include laptop{
+    right: -52px;
+  }
 }
 .map_4 .road:before{
   content: '';
@@ -942,6 +1628,15 @@ h1{
   margin: auto;
   left: -289px;
   top: -124px;
+  @include maxlaptop{
+    width: 260px;
+
+    left: -197px;
+
+  }
+  @include laptop{
+    left: -201px;
+  }
 }
 .map_5 .road:before{
   content: '';
@@ -954,6 +1649,14 @@ h1{
   bottom: 0;
   margin: auto;
   left: -53px;
+  @include maxlaptop{
+    width: 43px;
+    top: 15px;
+    left: -22px;
+  }
+  @include laptop{
+    left: -26px;
+  }
 }
 .map_6 .road:before{
   content: '';
@@ -967,6 +1670,9 @@ h1{
   margin: auto;
   right: -289px;
   top: -124px;
+  @include laptop{
+    right: -295px;
+  }
 }
 .map_7 .road:before{
   content: '';
@@ -979,6 +1685,12 @@ h1{
   bottom: 0;
   margin: auto;
   right: -53px;
+  @include maxlaptop{
+    right: -57px
+  }
+  @include laptop{
+    right: -61px;
+  }
 }
 .map_8 .road:before{
   content: '';
@@ -992,6 +1704,9 @@ h1{
   margin: auto;
   left: -289px;
   top: -124px;
+  @include laptop{
+    left: -293px;
+  }
 }
 .map_9 .road:before{
   content: '';
@@ -1004,6 +1719,12 @@ h1{
   bottom: 0;
   margin: auto;
   left: -53px;
+  @include maxlaptop{
+    left: -57px;
+  }
+  @include laptop{
+    left: -59px;
+  }
 }
 
 
