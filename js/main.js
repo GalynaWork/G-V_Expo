@@ -60,6 +60,13 @@
             }, 1000);
             $('.full_menu').removeClass('open');
         });
+        $('.kmts_click').click(function (){
+
+            $('html, body').animate({
+                scrollTop: $(".kmts").offset().top
+            }, 1000);
+            $('.full_menu').removeClass('open');
+        });
         $('.team_click').click(function (){
 
             $('html, body').animate({
