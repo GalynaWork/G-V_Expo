@@ -63,11 +63,13 @@ $transition: 450ms ease 0s;
 /*fonts*/
 @font-face {
   font-family: "Skoda_pro_bold";
-  src: url("../fonts/skoda_pro_bold-webfont.woff");
+  //src: url("../fonts/skoda_pro_bold-webfont.woff");
+  src: url("../fonts/SkodaPro-Bold.woff");
 }
 @font-face {
   font-family: "Skoda_regular";
-  src: url("../fonts/skoda_pro-webfont.woff");
+  //src: url("../fonts/skoda_pro-webfont.woff");
+  src: url("../fonts/SkodaPro.woff");
 }
 @font-face {
   font-family: "skoda_pro_light";
@@ -79,11 +81,13 @@ $transition: 450ms ease 0s;
 }
 @font-face {
   font-family: "roboto-bold";
-  src: url("../fonts/roboto-bold-webfont.woff");
+  //src: url("../fonts/roboto-bold-webfont.woff");
+  src: url("../fonts/Roboto-Bold.woff");
 }
 @font-face {
   font-family: "roboto-thin";
-  src: url("../fonts/roboto-thin-webfont.woff");
+  //src: url("../fonts/roboto-thin-webfont.woff");
+  src: url("../fonts/Roboto-Thin.woff");
 }
 @font-face {
   font-family: "roboto-light";
@@ -379,6 +383,7 @@ h1{
       @include transition($transition);
       @include tablet{
         line-height: 42px;
+        padding: 0 7px;
       }
       &:last-child{
 
@@ -409,6 +414,9 @@ h1{
       @include laptop{
         right: -31px;
         top: 18px;
+      }
+      @include tablet{
+        top: 12px;
       }
       @include mobile{
         z-index: 1;
@@ -611,12 +619,12 @@ h1{
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
-    font-size: 155px;
+    font-size: 111px;
     @include laptop{
-      font-size: 127px;
+      font-size: 105px;
     }
     @include tablet{
-      font-size: 94px;
+      font-size: 75px;
     }
     @include mobile{
       font-size: 60px;
@@ -629,7 +637,7 @@ h1{
     font-family: $SkodaBold;
     color: $black;
     font-size: 65px;
-    margin-top: 89px;
+    margin-top: 60px;
     margin-bottom: 39px;
     @include laptop{
       margin-top: 54px;
@@ -1735,12 +1743,18 @@ h1{
   background: url("../images/bg_our_app.jpg") no-repeat;
   background-size: cover;
   position: relative;
-  padding-top: 98px;
+  padding-top: 0px;
   @include laptop{
     padding-top: 60px;
   }
   @include mobile{
     padding-top: 20px;
+  }
+  .owl-stage-outer{
+    padding-top: 195px;
+    @include laptop{
+      padding-top: 105px;
+    }
   }
   .wrapper {
     max-width: 1247px;
@@ -1762,8 +1776,47 @@ h1{
     margin-top: -16px;
   }
   .our_app_wrapper{
+
     @include flexbox();
     width: 100%;
+    h2{
+      position: absolute;
+
+      font-family: $SkodaBold;
+      font-size: 67px;
+      color: $black;
+      top: -70px;
+      right: 74px;
+    }
+    .slide_1{
+      position: absolute;
+      right: 74px;
+      top: -70px;
+      h2{
+        position: relative;
+        top: 0;
+        right: 0;
+
+      }
+      p{
+        font-size: 23px;
+        font-family: $SkodaBold;
+        color: $black;
+        text-align: right;
+        margin-top: 7px;
+        margin-right: 8px;
+      }
+    }
+    .bottom{
+      font-size: 20px;
+      font-family: $SkodaBold;
+      color: $black;
+      margin-left: 10px;
+      line-height: 27px;
+      @media (max-width: 1050px) {
+        font-size: 15px;
+      }
+    }
 
     div{
       @include laptop{
@@ -1771,11 +1824,18 @@ h1{
       }
     }
     .hand{
-      margin-right: 64px;
+
+      width: 552px;
+      height: 907px;
+      margin-right: 15px;
       @include laptop{
+        //width: 50%;
+        //height: 50%;
+        margin-right: 15px;
+      }
+      @include tablet{
         width: 50%;
         height: 50%;
-        margin-right: 15px;
       }
       @include mobile{
         width: 200px;
@@ -1806,13 +1866,30 @@ h1{
       @include mobile{
         margin-bottom: 12px;
       }
+      @media (max-width: 1050px) {
+        margin-bottom: 40px;
+      }
       p{
         font-family: $SkodaRegular;
         font-size: 20px;
         line-height: 25px;
-        margin-top: -5px;
+        margin-top: 0px;
+        b+ br{
+          @include laptop{
+            display: block;
+          }
+        }
+        br{
+          @include laptop{
+            display: none;
+          }
+        }
+
+        b{
+          font-family: $SkodaBold;
+        }
         @include laptop{
-          font-size: 16px;
+          font-size: 15px;
           line-height: 23px;
         }
         @include mobile{
@@ -1823,7 +1900,7 @@ h1{
       }
     }
     li img{
-      width: 116px;
+      width: 111px;
       margin-right: 70px;
       height: 50%;
       @include laptop{
@@ -1887,8 +1964,13 @@ h1{
     }
     div{
       margin: 0 25px;
+      width: 25%;
       @include laptop{
         margin: 0 15px;
+      }
+      @include mobile{
+        width: 100%;
+        margin: 0;
       }
     }
     img{
@@ -1932,13 +2014,63 @@ h1{
 
     font-size: 30px;
     line-height: 35px;
+    @include laptop{
+      font-size: 23px;
+    }
     @include tablet{
       font-size: 20px;
       line-height: 25px;
     }
     @include mobile{
       margin-bottom: 35px;
+      font-size: 20px;
     }
+  }
+  .linkedin{
+    position: absolute;
+    background: url("../images/logo_linkedin.png") no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    @include transition($transition);
+    bottom: 2px;
+    cursor: pointer;
+    opacity: 0.5;
+    right: 4px;
+    &:hover{
+      opacity: 1;
+
+    }
+    @include laptop{
+      right: -4px;
+    }
+    @include tablet{
+      right: -6px;
+      width: 20px;
+      height: 20px;
+
+    }
+    @include mobile{
+      right: -4px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .group .photo{
+
+    position: relative;
+    width: 252px;
+    margin: 0 auto;
+    @include laptop{
+      width: 210px;
+    }
+    @include tablet{
+      width: 155px;
+    }
+    @include mobile  {
+      width: 200px;
+    }
+
   }
 }
 /*end team*/
